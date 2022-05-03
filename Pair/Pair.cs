@@ -38,13 +38,10 @@ namespace Pair
 
         public override bool Equals(object obj)
         {
-            if (Item1 == null || Item2 == null)
-                return false;
-
             if (obj == null || !(obj is IPair<T>))
                 return false;
 
-            return Equals(obj as IPair<T>);
+            return Equals((IPair<T>)obj);
         }
 
         public bool Equals(Pair<T> other) => Equals(other as IPair<T>);
@@ -54,16 +51,7 @@ namespace Pair
             if (other == null)
                 return false;
 
-            if (other.Item1 == null || other.Item2 == null)
-                return false;
-
-            if (other.Item1.Equals(Item1) && other.Item2.Equals(Item2))
-                return true;
-
-            if (other.Item2.Equals(Item1) && other.Item1.Equals(Item2))
-                return true;
-
-            return false;
+            return PairComparer.Compare(Item1, Item2, other.Item1, other.Item2);
         }
 
         public static bool operator ==(Pair<T> p1, Pair<T> p2)
