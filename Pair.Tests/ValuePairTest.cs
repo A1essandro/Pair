@@ -1,7 +1,6 @@
 using Moq;
 using Pair;
 using Shouldly;
-using System;
 using Xunit;
 
 namespace ValuePair.Tests
