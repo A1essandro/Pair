@@ -55,15 +55,9 @@ namespace Pair
             return PairComparer.Compare(Item1, Item2, other.Item1, other.Item2);
         }
 
-        public static bool operator ==(ValuePair<T> p1, ValuePair<T> p2)
-        {
-            return p1.Equals(p2);
-        }
+        public static bool operator ==(ValuePair<T> p1, ValuePair<T> p2) => p1.Equals(p2);
 
-        public static bool operator !=(ValuePair<T> p1, ValuePair<T> p2)
-        {
-            return !p1.Equals(p2);
-        }
+        public static bool operator !=(ValuePair<T> p1, ValuePair<T> p2) => !p1.Equals(p2);
 
         #endregion
 

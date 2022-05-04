@@ -54,15 +54,17 @@ namespace Pair
             return PairComparer.Compare(Item1, Item2, other.Item1, other.Item2);
         }
 
-        public static bool operator ==(Pair<T> p1, Pair<T> p2)
-        {
-            return p1.Equals(p2);
-        }
+        public static bool operator ==(Pair<T> p1, Pair<T> p2) => p1.Equals(p2);
 
-        public static bool operator !=(Pair<T> p1, Pair<T> p2)
-        {
-            return !p1.Equals(p2);
-        }
+        public static bool operator !=(Pair<T> p1, Pair<T> p2) => !p1.Equals(p2);
+
+        public static bool operator ==(IPair<T> p1, Pair<T> p2) => p1.Equals(p2);
+
+        public static bool operator !=(IPair<T> p1, Pair<T> p2) => !p1.Equals(p2);
+
+        public static bool operator ==(Pair<T> p1, IPair<T> p2) => p1.Equals(p2);
+
+        public static bool operator !=(Pair<T> p1, IPair<T> p2) => !p1.Equals(p2);
 
         #endregion
 
